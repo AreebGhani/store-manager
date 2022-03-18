@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Store Inventory Manager, Created By Areeb Ghani, Friday - 26 Nov 2021 15:41:54 GMT -->
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Join &#8211; Store Inventory Manager</title>
+      <meta name="keywords" content="Store Inventory Manager">
+      <meta name="description" content="Store Inventory Manager, Created by Areeb Ghani => +923041554698">
+      <meta name="author" content="Store Inventory Manager">
+      <!-- site icon -->
+      <link rel="icon" href="../content/img/stock.png" type="image/png" />
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <!-- site css -->
+      <link rel="stylesheet" href="style.css" />
+      <!-- responsive css -->
+      <link rel="stylesheet" href="css/responsive.css" />
+      <!-- color css -->
+      <link rel="stylesheet" href="css/colors.css" />
+      <!-- select bootstrap -->
+      <link rel="stylesheet" href="css/bootstrap-select.css" />
+      <!-- scrollbar css -->
+      <link rel="stylesheet" href="css/perfect-scrollbar.css" />
+      <!-- custom css -->
+      <link rel="stylesheet" href="css/custom.css" />
+      <!-- calendar file css -->
+      <link rel="stylesheet" href="js/semantic.min.css" />
+      <!-- REQUIRED CDN  -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js" integrity="sha512-DNeDhsl+FWnx5B1EQzsayHMyP6Xl/Mg+vcnFPXGNjUZrW28hQaa1+A4qL9M+AiOMmkAhKAWYHh1a+t6qxthzUw==" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" integrity="sha512-yye/u0ehQsrVrfSd6biT17t39Rg9kNc+vENcCXZuMz2a+LWFGvXUnYuWUW6pbfYj1jcBb/C39UZw2ciQvwDDvg==" crossorigin="anonymous" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" integrity="sha512-BNZ1x39RMH+UYylOW419beaGO0wqdSkO7pi1rYDYco9OL3uvXaC/GTqA5O4CVK2j4K9ZkoDNSSHVkEQKkgwdiw==" crossorigin="anonymous"></script>
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body class="inner_page login">
+      <div class="full_container">
+         <div class="container">
+            <div class="center verticle_center full_height">
+               <div class="login_section">
+                  <div class="logo_login">
+                     <div class="center" style="cursor:pointer;" onclick="window.location.replace('../index.html        ')">
+                        <img width="100" height="100" src="../content/img/inventory.png" alt="fgm-traders" />
+                     </div>
+                  </div>
+                  <div class="login_form">
+                     <form id="form" action="./php/join.php" method="post">
+                        <fieldset>
+                            <div class="field">
+                              <label class="label_field">Your Name</label>
+                              <input type="text" name="name" placeholder="Name" required/>
+                           </div>
+                           <div class="field">
+                              <label class="label_field">Email Address</label>
+                              <input type="email" name="email" placeholder="E-mail" required/>
+                           </div>
+                           <div class="field" style="display:flex;">
+                              <label class="label_field">Number</label>
+                              <input name="phone" type="text" pattern="[0-9]{11}" value="+92" id="phone" placeholder="Contact No." required/>
+                           </div>
+                            <div class="field">
+                              <label class="label_field">Your Message</label>
+                              <input type="text" name="message" placeholder="Want To Say Something . . ." />
+                           </div>
+                           <div class="field margin_0">
+                              <label class="label_field hidden">hidden label</label>
+                              <button type="submit" name="submit" class="main_bt">Request For Joining</button>
+                           </div>
+                        </fieldset>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- jQuery -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <!-- wow animation -->
+      <script src="js/animate.js"></script>
+      <!-- select country -->
+      <script src="js/bootstrap-select.js"></script>
+      <!-- nice scrollbar -->
+      <script src="js/perfect-scrollbar.min.js"></script>
+      <script>
+         var ps = new PerfectScrollbar('#sidebar');
+      </script>
+      <!-- custom js -->
+      <script src="js/custom.js"></script>
+      <script>
+         $(document).ready(function(){
+            var form = $('form');
+            $.ajax({
+               url: form.attr('action'),
+               type: 'POST',
+               data: $('#form input').serialize()
+              });
+          });
+      </script>
+      <script>
+         var input = document.querySelector("#phone");
+         window.intlTelInput(input, {
+             separateDialCode: true,
+             customPlaceholder: function (
+                 selectedCountryPlaceholder,
+                 selectedCountryData
+             ) {
+                 return "e.g. " + selectedCountryPlaceholder;
+             },
+         });
+     </script>
+   </body>
+   <!-- Store Inventory Manager, Created By Areeb Ghani, Friday - 26 Nov 2021 15:41:54 GMT -->
+</html>
